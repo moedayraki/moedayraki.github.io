@@ -1,0 +1,5 @@
+set -e
+
+git add -A
+git commit -m "Deploy to GitHub Pages"
+git push -f https://github.com/moedayraki/moedayraki.github.io.git main
