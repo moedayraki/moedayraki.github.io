@@ -17,7 +17,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     My first name is actually Mohammed but I go by Moe, Mauris, and in video
     games I'm known as El3ctr0n. I create
     <a target="_blank" href="https://dayrakiarts.com/">stuff for the web</a>
-    that include websites, web applications, and contribute to open source as
+    including websites, web applications, and contribute to open source as
     much as I can.
   </WelcomeItem>
 
