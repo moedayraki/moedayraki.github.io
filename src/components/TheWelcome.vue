@@ -49,7 +49,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     <ul>
       <li><a target="_blank" href="https://laravel.com/">TypeScript</a>, Javascript's kid with types.</li>
       <li><a target="_blank" href="https://laravel.com/">Docker</a> for better deployment experience.</li>
-      <li><a target="_blank" href="https://laravel.com/">Cypress</a>for right development experience.</li>
+      <li><a target="_blank" href="https://laravel.com/">Cypress</a> for right development experience.</li>
     </ul>
 
     More details about packaes, technologies, and ideas I use are available in <a href="https://github.com/moedayraki/moe-useful-things" target="_blank">Moe Useful Things</a>.
@@ -59,19 +59,8 @@ import SupportIcon from "./icons/IconSupport.vue";
     <template #icon>
       <EcosystemIcon />
     </template>
-    <template #heading>How Would It Come Together?</template>
-
-    (A brief story of my life)Get official tools and libraries for your project:
-    <a target="_blank" href="https://pinia.vuejs.org/">Pinia</a>,
-    <a target="_blank" href="https://router.vuejs.org/">Vue Router</a>,
-    <a target="_blank" href="https://test-utils.vuejs.org/">Vue Test Utils</a>,
-    and
-    <a target="_blank" href="https://github.com/vuejs/devtools">Vue Dev Tools</a
-    >. If you need more resources, we suggest paying
-    <a target="_blank" href="https://github.com/vuejs/awesome-vue"
-      >Awesome Vue</a
-    >
-    a visit.
+    <template #heading>Projects I'm Working On</template>
+    Projects I'm working is coming soon!
   </WelcomeItem>
 
   <WelcomeItem>
@@ -79,27 +68,14 @@ import SupportIcon from "./icons/IconSupport.vue";
       <CommunityIcon />
     </template>
     <template #heading>My Blog</template>
-
-    Got stuck? Ask your question on
-    <a target="_blank" href="https://chat.vuejs.org">Vue Land</a>, our official
-    Discord server, or
-    <a target="_blank" href="https://stackoverflow.com/questions/tagged/vue.js"
-      >StackOverflow</a
-    >. You should also subscribe to
-    <a target="_blank" href="https://news.vuejs.org">our mailing list</a> and
-    follow the official
-    <a target="_blank" href="https://twitter.com/vuejs">@vuejs</a>
-    twitter account for latest news in the Vue world.
+    My blog is coming soon!
   </WelcomeItem>
 
   <WelcomeItem>
     <template #icon>
       <SupportIcon />
     </template>
-    <template #heading>Support</template>
-
-    As an independent project, Vue relies on community backing for its
-    sustainability. You can help us by
-    <a target="_blank" href="https://vuejs.org/sponsor/">becoming a sponsor</a>.
+    <template #heading>Buy Me Coffee</template>
+    If you like what I do, try being me a cup of coffee!
   </WelcomeItem>
 </template>
