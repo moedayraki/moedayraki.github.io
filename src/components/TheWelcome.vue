@@ -17,7 +17,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     My first name is actually Mohammed but I go by Moe, Mauris, and in video
     games I'm known as El3ctr0n. I create
     <a target="_blank" href="https://dayrakiarts.com/">stuff for the web</a>
-    including websites, web applications, and contribute to open source as
+    including websites, web applications, and contribute to <a target="_blank" href="https://github.com/moedayraki/">open source</a> as
     much as I can.
   </WelcomeItem>
 
@@ -27,22 +27,32 @@ import SupportIcon from "./icons/IconSupport.vue";
     </template>
     <template #heading>My Go to Stack</template>
 
-    (The Stack I use)This project is served and bundled with
-    <a href="https://vitejs.dev/guide/features.html" target="_blank">Vite</a>.
-    The recommended IDE setup is
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a> +
-    <a href="https://github.com/johnsoncodehk/volar" target="_blank">Volar</a>.
-    If you need to test your components and web pages, check out
-    <a href="https://www.cypress.io/" target="_blank">Cypress</a> and
-    <a
-      href="https://docs.cypress.io/guides/component-testing/introduction"
-      target="_blank"
-      >Cypress Component Testing</a
-    >.
+    My road to web development is not that common. I got my Masters from University of Windsor as an Electrical Computer Engineer
+    with focus on Cyber Security and Wireless Communication. I've then landed a job as a web developer.
+    
+    <br />
+    
+    There, <a target="_blank" href="https://laravel.com/">laravel</a> was my door to web development. You can read more
+    about my road to web development <a target="_blank" href="https://dayrakiarts.com/"here</a>.
+    
+    When it comes to web development, my go to stack is:
+    <ul>
+      <li><a target="_blank" href="https://laravel.com/">VS Code</a> as an IDE</li>
+      <li>Backend written with the beatiful <a target="_blank" href="https://laravel.com/">Laravel</a></li>
+      <li>What's better than <a target="_blank" href="https://laravel.com/">VueJS</a> when it comes to frontend</li>
+      <li><a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>\
+      <li>For databases, I use relational databases including <a target="_blank" href="https://laravel.com/">SqlSrv, mySQL, and SqlLite</a></li>
+    </ul>
 
     <br />
+    Technology I'm learning now include
+    <ul>
+      <li><a target="_blank" href="https://laravel.com/">TypeScript</a>, Javascript's kid with types.</li>
+      <li><a target="_blank" href="https://laravel.com/">Docker</a> for better deployment experience.</li>
+      <li><a target="_blank" href="https://laravel.com/">Cypress</a>for right development experience.</li>
+    </ul>
 
-    More instructions are available in <code>README.md</code>.
+    More details about packaes, technologies, and ideas I use are available in <a href="https://github.com/moedayraki/moe-useful-things" target="_blank">Moe Useful Things</a>.
   </WelcomeItem>
 
   <WelcomeItem>
