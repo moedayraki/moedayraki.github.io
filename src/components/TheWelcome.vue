@@ -33,7 +33,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     <br />
     
     There, <a target="_blank" href="https://laravel.com/">laravel</a> was my door to web development. You can read more
-    about my road to web development <a target="_blank" href="https://dayrakiarts.com/"here</a>.
+    about my road to web development <a target="_blank" href="https://dayrakiarts.com/">here</a>.
     
     When it comes to web development, my go to stack is:
     <ul>
