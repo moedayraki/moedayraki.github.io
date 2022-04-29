@@ -40,7 +40,7 @@ import SupportIcon from "./icons/IconSupport.vue";
       <li><a target="_blank" href="https://laravel.com/">VS Code</a> as an IDE</li>
       <li>Backend written with the beatiful <a target="_blank" href="https://laravel.com/">Laravel</a></li>
       <li>What's better than <a target="_blank" href="https://laravel.com/">VueJS</a> when it comes to frontend</li>
-      <li><a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>\
+      <li><a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>
       <li>For databases, I use relational databases including <a target="_blank" href="https://laravel.com/">SqlSrv, mySQL, and SqlLite</a></li>
     </ul>
 
