@@ -5,6 +5,7 @@ import ToolingIcon from "./icons/IconTooling.vue";
 import EcosystemIcon from "./icons/IconEcosystem.vue";
 import CommunityIcon from "./icons/IconCommunity.vue";
 import SupportIcon from "./icons/IconSupport.vue";
+import VSCodeIcon from "./icons/IconVSCode.vue";
 </script>
 
 <template>
@@ -37,7 +38,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     
     When it comes to web development, my go to stack is:
     <ul>
-      <li><a target="_blank" href="https://laravel.com/">VS Code</a> as an IDE</li>
+      <li><VSCodeIcon /><a target="_blank" href="https://laravel.com/">VS Code</a> as an IDE</li>
       <li>Backend written with the beatiful <a target="_blank" href="https://laravel.com/">Laravel</a></li>
       <li>What's better than <a target="_blank" href="https://laravel.com/">VueJS</a> when it comes to frontend</li>
       <li><a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>
