@@ -84,5 +84,6 @@ import IconSqlLite from "./icons/IconSqlLite.vue";
     </template>
     <template #heading>Buy Me Coffee</template>
     If you like what I do, try being me a cup of coffee!
+    <a href="https://www.buymeacoffee.com/moedayraki" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
   </WelcomeItem>
 </template>
