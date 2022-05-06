@@ -7,6 +7,11 @@ import CommunityIcon from "./icons/IconCommunity.vue";
 import SupportIcon from "./icons/IconSupport.vue";
 import VSCodeIcon from "./icons/IconVSCode.vue";
 import LaravelIcon from "./icons/IconLaravel.vue";
+import IconVuejsVue from "./icons/IconVuejs.vue";
+import IconTailwindcss from "./icons/IconTailwindcss.vue";
+import IconMySql from "./icons/IconMySql.vue";
+import IconSqlsrv from "./icons/IconSqlsrv.vue";
+import IconSqlLite from "./icons/IconSqlLite.vue";
 </script>
 
 <template>
@@ -41,9 +46,9 @@ import LaravelIcon from "./icons/IconLaravel.vue";
     <ul>
       <li><VSCodeIcon /> <a target="_blank" href="https://laravel.com/">VS Code</a> as an IDE</li>
       <li>Backend written with the beatiful <LaravelIcon /><a target="_blank" href="https://laravel.com/">Laravel</a></li>
-      <li>What's better than <a target="_blank" href="https://laravel.com/">VueJS</a> when it comes to frontend</li>
-      <li><a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>
-      <li>For databases, I use relational databases including <a target="_blank" href="https://laravel.com/">SqlSrv, mySQL, and SqlLite</a></li>
+      <li>What's better than <IconVuejs /> <a target="_blank" href="https://laravel.com/">VueJS</a> when it comes to frontend</li>
+      <li><IconTailwindcss /> <a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>
+      <li>For databases, I use relational databases including <a target="_blank" href="https://laravel.com/"><IconSqlsrv /> SqlSrv,<IconMysql /> mySQL, and <IconSqllite /> SqlLite</a></li>
     </ul>
 
     <br />
