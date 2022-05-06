@@ -48,7 +48,7 @@ import IconSqlLite from "./icons/IconSqlLite.vue";
       <li>Backend written with the beatiful <LaravelIcon /><a target="_blank" href="https://laravel.com/">Laravel</a></li>
       <li>What's better than <IconVuejs /> <a target="_blank" href="https://laravel.com/">VueJS</a> when it comes to frontend</li>
       <li><IconTailwindcss /> <a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>
-      <li>For databases, I use relational databases including <a target="_blank" href="https://laravel.com/"><IconSqlsrv /> SqlSrv,<IconMysql /> mySQL, and <IconSqllite /> SqlLite</a></li>
+      <li>For databases, I use relational databases including <a target="_blank" href="https://laravel.com/"><IconSqlsrv /> SqlSrv,<IconMySql /> mySQL, and <IconSqlLite /> SqlLite</a></li>
     </ul>
 
     <br />
