@@ -39,16 +39,16 @@ import IconSqlLite from "./icons/IconSqlLite.vue";
     
     <br />
     
-    There, <a target="_blank" href="https://laravel.com/">laravel</a> was my door to web development. You can read more
+    There, <a target="_blank" href="https://laravel.com/">/laravel</a> was my door to web development. You can read more
     about my road to web development <a target="_blank" href="https://dayrakiarts.com/">here</a>.
     
     When it comes to web development, my go to stack is:
     <ul>
-      <li><VSCodeIcon /> <a target="_blank" href="https://laravel.com/">VS Code</a> as an IDE</li>
+      <li><VSCodeIcon /> <a target="_blank" href="https://code.visualstudio.com/">VS Code</a> as an IDE</li>
       <li>Backend written with the beatiful <LaravelIcon /><a target="_blank" href="https://laravel.com/">Laravel</a></li>
-      <li>What's better than <IconVuejs /> <a target="_blank" href="https://laravel.com/">VueJS</a> when it comes to frontend</li>
-      <li><IconTailwindcss /> <a target="_blank" href="https://laravel.com/">TailwindCSS</a>, the CSS framework that I recommend</li>
-      <li>For databases, I use relational databases including <a target="_blank" href="https://laravel.com/"><IconSqlsrv /> SqlSrv,<IconMySql /> mySQL, and <IconSqlLite /> SqlLite</a></li>
+      <li>What's better than <IconVuejs /> <a target="_blank" href="https://vuejs.org/">VueJS</a> when it comes to frontend</li>
+      <li><IconTailwindcss /> <a target="_blank" href="https://tailwindcss.com/">TailwindCSS</a>, the CSS framework that I recommend</li>
+      <li>For databases, I use relational databases including <IconSqlsrv /><a target="_blank" href="https://www.microsoft.com/en-ca/sql-server/sql-server-downloads"> SqlSrv</a>,<IconMySql /><a target="_blank" href="https://www.mysql.com/"> mySQL</a>, and <IconSqlLite /><a target="_blank" href="https://www.sqlite.org/index.html"> SqlLite</a></li>
     </ul>
 
     <br />
