@@ -12,6 +12,9 @@ import IconTailwindcss from "./icons/IconTailwindcss.vue";
 import IconMySql from "./icons/IconMySql.vue";
 import IconSqlsrv from "./icons/IconSqlsrv.vue";
 import IconSqlLite from "./icons/IconSqlLite.vue";
+import IconTypescript from "./icons/IconTypescript.vue";
+import IconDocker from "./icons/IconDocker.vue";
+import IconCypress from "./icons/IconCypress.vue";
 </script>
 
 <template>
@@ -54,9 +57,9 @@ import IconSqlLite from "./icons/IconSqlLite.vue";
     <br />
     Technology I'm learning now include
     <ul>
-      <li><a target="_blank" href="https://laravel.com/">TypeScript</a>, Javascript's kid with types.</li>
-      <li><a target="_blank" href="https://laravel.com/">Docker</a> for better deployment experience.</li>
-      <li><a target="_blank" href="https://laravel.com/">Cypress</a> for right development experience.</li>
+      <li><IconTypescript /> <a target="_blank" href="https://laravel.com/">TypeScript</a>, Javascript's kid with types.</li>
+      <li><IconDocker /> <a target="_blank" href="https://laravel.com/">Docker</a> for better deployment experience.</li>
+      <li><IconCypress /> <a target="_blank" href="https://laravel.com/">Cypress</a> for right development experience.</li>
     </ul>
 
     More details about packaes, technologies, and ideas I use are available in <a href="https://github.com/moedayraki/moe-useful-things" target="_blank">Moe Useful Things</a>.
@@ -83,7 +86,7 @@ import IconSqlLite from "./icons/IconSqlLite.vue";
       <SupportIcon />
     </template>
     <template #heading>Buy Me Coffee</template>
-    If you like what I do, try being me a cup of coffee!
-    <a href="https://www.buymeacoffee.com/moedayraki" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+    <a href="https://www.buymeacoffee.com/moedayraki" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;padding-bottom:10px" ></a>
+    <div>If you like what I do, try being me a cup of coffee!</div>
   </WelcomeItem>
 </template>
