@@ -9,6 +9,7 @@ defineProps<{
     <h1 class="green">{{ msg }}</h1>
     <h3>The Moe you are looking for is here!</h3>
     <h3>At least a virtual copy of him 😇</h3>
+    <h3>You can also visit my <a>Blog!</a></h3>
   </div>
 </template>
 
