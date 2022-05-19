@@ -65,13 +65,13 @@ import IconCypress from "./icons/IconCypress.vue";
     More details about packaes, technologies, and ideas I use are available in <a href="https://github.com/moedayraki/moe-useful-things" target="_blank">Moe Useful Things</a>.
   </WelcomeItem>
 
-  <WelcomeItem>
+  <!-- <WelcomeItem>
     <template #icon>
       <EcosystemIcon />
     </template>
     <template #heading>Projects I'm Working On</template>
     Projects I'm working is coming soon!
-  </WelcomeItem>
+  </WelcomeItem> -->
 
   <WelcomeItem>
     <template #icon>
