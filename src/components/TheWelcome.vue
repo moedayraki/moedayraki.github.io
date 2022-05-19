@@ -7,7 +7,7 @@ import CommunityIcon from "./icons/IconCommunity.vue";
 import SupportIcon from "./icons/IconSupport.vue";
 import VSCodeIcon from "./icons/IconVSCode.vue";
 import LaravelIcon from "./icons/IconLaravel.vue";
-import IconVuejsVue from "./icons/IconVuejs.vue";
+import IconVuejs from "./icons/IconVuejs.vue";
 import IconTailwindcss from "./icons/IconTailwindcss.vue";
 import IconMySql from "./icons/IconMySql.vue";
 import IconSqlsrv from "./icons/IconSqlsrv.vue";
