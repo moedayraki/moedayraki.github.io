@@ -1,1 +1,0 @@
-import{_ as e,o as s,c as t,a}from"./index.4d3e67c4.js";const o={},c={class:"about"},n=a("h1",null,"This is the terminal page",-1),r=[n];function _(i,l){return s(),t("div",c,r)}var h=e(o,[["render",_]]);export{h as default};
