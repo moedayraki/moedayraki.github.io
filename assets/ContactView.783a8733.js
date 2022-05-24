@@ -1,0 +1,1 @@
+import{_ as e,o as t,c as _,a}from"./index.31dfbeac.js";const c={},o={class:"about"},s=a("h1",null,"This is the contact page",-1),n=[s];function r(i,d){return t(),_("div",o,n)}var h=e(c,[["render",r]]);export{h as default};
