@@ -19,6 +19,11 @@
       </div>
   </div>
 </template>
-
+<script lang="ts">
+  import History from "@/components/history/History.vue"
+  export default {
+    
+  }
+</script>
 
 
