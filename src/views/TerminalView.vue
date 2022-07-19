@@ -1,29 +1,71 @@
 <template>
-  <div class="text-light-foreground dark:text-dark-foreground min-w-max text-xs md:min-w-full md:text-base">
-    <div className="p-8 overflow-hidden h-full border-2 rounded border-light-yellow dark:border-dark-yellow">
-        <!-- <div ref={containerRef} className="overflow-y-auto h-full">
-          <History history={history} />
-
-          <Input
-            inputRef={inputRef}
-            containerRef={containerRef}
-            command={command}
-            history={history}
-            lastCommandIndex={lastCommandIndex}
-            setCommand={setCommand}
-            setHistory={setHistory}
-            setLastCommandIndex={setLastCommandIndex}
-            clearHistory={clearHistory}
-          />
-        </div> -->
-      </div>
-  </div>
+  <Terminal welcomeMessage="Welcome to PrimeVue" prompt="primevue $" class="dark-demo-terminal" />
 </template>
 <script lang="ts">
-  import History from "@/components/history/History.vue"
-  export default {
-    
-  }
+import { onMounted, onBeforeUnmount } from 'vue';
+import TerminalService from "primevue/terminalservice";
+
+export default {
+    setup() {
+        onMounted(() => {
+            TerminalService.on('command', commandHandler);
+        })
+
+        onBeforeUnmount(() => {
+            TerminalService.off('command', commandHandler);
+        })
+
+        const commandHandler = (text:String) => {
+            let response;
+            let argsIndex = text.indexOf(' ');
+            let command = argsIndex !== -1 ? text.substring(0, argsIndex) : text;
+
+            switch(command) {
+                case "date":
+                    response = 'Today is ' + new Date().toDateString();
+                    break;
+
+                case "greet":
+                    response = 'Hola ' + text.substring(argsIndex + 1);
+                    break;
+
+                case "random":
+                    response = Math.floor(Math.random() * 100);
+                    break;
+
+                default:
+                    response = "Unknown command: " + command;
+            }
+            
+            TerminalService.emit('response', response);
+        }
+
+        return { commandHandler }
+    }
+}
 </script>
+
+<style lang="scss" scoped>
+p {
+    margin-top: 0;
+}
+
+::v-deep(.dark-demo-terminal) {
+    background-color: #212121;
+    color: #ffffff;
+
+    .p-terminal-command {
+        color: #80CBC4;
+    }
+
+    .p-terminal-prompt {
+        color: #FFD54F;
+    }
+
+    .p-terminal-response {
+        color: #9FA8DA;
+    }
+}
+</style>
 
 
