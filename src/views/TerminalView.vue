@@ -1,5 +1,5 @@
 <template>
-  <Terminal welcomeMessage="Welcome to PrimeVue" prompt="primevue $" class="dark-demo-terminal" />
+  <Terminal welcomeMessage="Ah! A developer!..Or just a curious person 😇? try '--help' for help" prompt="moe $" class="dark-demo-terminal" />
 </template>
 <script lang="ts">
 import { onMounted, onBeforeUnmount } from 'vue';
@@ -24,16 +24,20 @@ export default {
             let command = argsIndex !== -1 ? text.substring(0, argsIndex) : text;
 
             switch(command) {
-                case "date":
+                case "today":
                     response = 'Today is ' + new Date().toDateString();
                     break;
 
-                case "greet":
-                    response = 'Hola ' + text.substring(argsIndex + 1);
+                case "hello moe":
+                    response = 'Hola! ';
                     break;
 
-                case "random":
+                case "number":
                     response = Math.floor(Math.random() * 100);
+                    break;
+                                
+                case "--help":
+                    response = "useful commands: 'today','hello moe','number','--help'";
                     break;
 
                 default:
