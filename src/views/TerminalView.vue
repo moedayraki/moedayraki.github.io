@@ -3,9 +3,12 @@
 </template>
 <script lang="ts">
 import { onMounted, onBeforeUnmount } from 'vue';
+import Terminal from 'primevue/terminal';
 import TerminalService from "primevue/terminalservice";
 
 export default {
+    name:'terminal-view',
+    components:{Terminal,TerminalService},
     setup() {
         onMounted(() => {
             TerminalService.on('command', commandHandler);
