@@ -1,5 +1,5 @@
 <template>
-  <Terminal welcomeMessage="Ah! A developer!..Or just a curious person 😇? try '--help' for help" prompt="moe $" class="dark-demo-terminal" />
+  <Terminal welcomeMessage="moe@dayrakiarts OS|DEVICE ~terminal " prompt="moe $ " class="dark-demo-terminal" />
 </template>
 <script lang="ts">
 import { onMounted, onBeforeUnmount } from 'vue';
@@ -24,22 +24,22 @@ export default {
             let command = argsIndex !== -1 ? text.substring(0, argsIndex) : text;
 
             switch(command) {
-                case "today":
-                    response = 'Today is ' + new Date().toDateString();
+                case "--help":
+                    response = "useful commands:'moe': get to know Moe \r\n 'hello': just say hi\n '.home': navigate to home\n '--help': get all available commands";
                     break;
 
-                case "hello moe":
-                    response = 'Hola! ';
+                case "moe":
+                    response = "Wait a minute. I'm still defining myself 😟.";
+                    break;
+
+                case "hello":
+                    response = "Hola!\n I'm Moe. type 'moe' to know more about me 😊. ";
                     break;
 
                 case "number":
                     response = Math.floor(Math.random() * 100);
                     break;
                                 
-                case "--help":
-                    response = "useful commands: 'today','hello moe','number','--help'";
-                    break;
-
                 default:
                     response = "Unknown command: " + command;
             }
