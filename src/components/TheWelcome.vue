@@ -42,7 +42,7 @@ import IconCypress from "./icons/IconCypress.vue";
     
     <br />
     
-    There, <a target="_blank" href="https://laravel.com/">/laravel</a> was my door to web development. You can read more
+    There, <a target="_blank" href="https://laravel.com/">laravel</a> was my door to web development. You can read more
     about my road to web development <a target="_blank" href="https://dayrakiarts.com/">here</a>.
     
     When it comes to web development, my go to stack is:
@@ -87,6 +87,6 @@ import IconCypress from "./icons/IconCypress.vue";
     </template>
     <template #heading>Buy Me Coffee</template>
     <a href="https://www.buymeacoffee.com/moedayraki" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;padding-bottom:10px" ></a>
-    <div>If you like what I do, try being me a cup of coffee!</div>
+    <div>You like what I do? try buying me a cup of coffee!</div>
   </WelcomeItem>
 </template>
