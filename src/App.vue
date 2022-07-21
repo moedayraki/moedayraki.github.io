@@ -1,10 +1,10 @@
-<script setup lang="ts">
+<script setup>
 import { RouterLink, RouterView } from "vue-router";
 import HelloWorld from "@/components/HelloWorld.vue";
 </script>
 
 <template>
-  <header v-if="$route.name != 'terminal' ">
+  <header v-if="$route.name != 'terminal'">
     <img
       alt="Moe's Avatar"
       class="logo"
