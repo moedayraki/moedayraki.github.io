@@ -31,7 +31,7 @@ export default {
       let argsIndex = text.indexOf(" ");
       let command = argsIndex !== -1 ? text.substring(0, argsIndex) : text;
 
-      switch (command) {
+      switch (command.toLowerCase()) {
         case "--help":
           response = `commands:
             <br />
