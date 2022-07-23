@@ -11,7 +11,6 @@ defineProps<{
     <h3>At least a virtual copy of him 😇</h3>
     <br>
     <h5>Wait!<RouterLink to="/terminal"> click here</RouterLink>  if you're a developer.</h5>
-    <!-- <h3>Check out my <a>Blog!</a></h3> -->
   </div>
 </template>
 

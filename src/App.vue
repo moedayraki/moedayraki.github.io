@@ -1,10 +1,16 @@
-<script setup>
+<script setup lang="ts">
 import { RouterLink, RouterView } from "vue-router";
+import { useAppStore  } from '@/stores/app';
 import HelloWorld from "@/components/HelloWorld.vue";
+import TriStateCheckbox from 'primevue/tristatecheckbox';
+
+const app = useAppStore()
+
 </script>
 
 <template>
   <header v-if="$route.name != 'terminal'">
+    <div>
     <img
       alt="Moe's Avatar"
       class="logo"
@@ -12,7 +18,8 @@ import HelloWorld from "@/components/HelloWorld.vue";
       width="200"
       height="200"
     />
-
+      <!-- <TriStateCheckbox v-model="app.scheme" /> -->
+    </div>
     <div class="wrapper">
       <HelloWorld msg="Hello, Hello! 👋" />
 
@@ -122,5 +129,57 @@ nav a:first-of-type {
     padding: 1rem 0;
     margin-top: 1rem;
   }
+}
+
+.p-checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.p-component, .p-component * {
+    box-sizing: border-box;
+}
+
+.p-checkbox {
+    width: 22px;
+    height: 22px;
+}
+
+.p-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+.p-checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    user-select: none;
+    vertical-align: bottom;
+    position: relative;
+}
+
+.p-checkbox .p-checkbox-box {
+    /* border: 2px solid #ced4da;
+    background: #fff; */
+    width: 22px;
+    height: 22px;
+    color: #495057;
+    border-radius: 6px;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+}
+
+.p-checkbox-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 </style>
