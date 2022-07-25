@@ -2,7 +2,7 @@
   <Terminal
     welcomeMessage="~terminal (type '--help' for more information)"
     prompt="moe $ "
-    class="dark-demo-terminal"
+    class="moe-terminal"
   />
 </template>
 <script>
@@ -10,6 +10,7 @@ import { onMounted, onBeforeUnmount } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import Terminal from "@/components/Terminal.vue";
 import TerminalService from "primevue/terminalservice";
+import { useAppStore } from "@/stores/app";
 
 export default {
   name: "terminal-view",
@@ -17,6 +18,7 @@ export default {
   setup() {
     const router = useRouter();
     const route = useRoute();
+    const app = useAppStore();
 
     onMounted(() => {
       TerminalService.on("command", commandHandler);
@@ -35,7 +37,9 @@ export default {
         case "--help":
           response = `commands:
             <br />
-            <div class="ml-4 w-1/5 inline-block">moe</div><div class="w-2/5 inline-block">get to know moe</div>
+            ~terminal is moe's portfolio as a CLI. New commands and features will be added to the portofolio every week.
+            <br />
+            <div class="ml-4 w-1/5 inline-block">moe</div><div class="w-2/5 inline-block">get to know more about moe</div>
             <br /> 
             <div class="ml-4 w-1/5 inline-block">hello</div><div class="w-2/5 inline-block">just say hi</div>
             <br /> 
@@ -64,6 +68,10 @@ export default {
           router.push("/");
           break;
 
+        case "toggle-scheme":
+          app.toggleMediaPreference();
+          break;
+
         default:
           response = "unknown command: " + command;
       }
@@ -80,43 +88,38 @@ export default {
 p {
   margin-top: 0;
 }
-.dark-demo-terminal {
+.moe-terminal {
   height: 90vh;
   width: 90vw;
-}
-@media (prefers-color-scheme: dark) {
-  .dark-demo-terminal {
-    color: white;
-  }
-  .p-terminal-command {
-    color: #5dce41;
-  }
-
-  .p-terminal-prompt {
-    color: #ff5d5d;
-    margin-right: 0.5rem;
-  }
-
-  .p-terminal-response {
-    color: white;
-  }
+  color: black;
 }
 
-@media (prefers-color-scheme: light) {
-  .dark-demo-terminal {
-    color: black;
-  }
-  .p-terminal-command {
-    color: #146f00;
-  }
+.p-terminal-command {
+  color: #146f00;
+}
 
-  .p-terminal-prompt {
-    color: #ff0000;
-    margin-right: 0.5rem;
-  }
+.p-terminal-prompt {
+  color: #ff0000;
+  margin-right: 0.5rem;
+}
 
-  .p-terminal-response {
-    color: black;
-  }
+.p-terminal-response {
+  color: black;
+}
+
+:root.dark .moe-terminal {
+  color: white;
+}
+:root.dark .p-terminal-command {
+  color: #5dce41;
+}
+
+:root.dark .p-terminal-prompt {
+  color: #ff5d5d;
+  margin-right: 0.5rem;
+}
+
+:root.dark .p-terminal-response {
+  color: white;
 }
 </style>
