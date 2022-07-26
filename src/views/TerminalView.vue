@@ -72,6 +72,15 @@ export default {
           app.toggleMediaPreference();
           break;
 
+        case "jana":
+          response = `Jana is something I can't live without.❤ 
+          <br/>
+          If you find this code, you're either know your way in programming or you're close enough to me! 😇
+          <br/>
+          I love Jana, I will always love Jana!
+          `
+        break;
+
         default:
           response = "unknown command: " + command;
       }
