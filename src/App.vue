@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
+import { ref,onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useAppStore } from "@/stores/app";
 import HelloWorld from "@/components/HelloWorld.vue";
@@ -7,6 +7,16 @@ import HelloWorld from "@/components/HelloWorld.vue";
 const app = useAppStore();
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
+var imgAni = ref()
+onMounted(() => {
+  setTimeout(() =>{
+    imgAni.value = 'openDownLeft'
+  },2000)
+  setTimeout(() =>{
+    imgAni.value = 'openDownLeftReturn'
+  },4000)
+})
+
 </script>
 
 <template>
@@ -14,7 +24,7 @@ document.documentElement.className = app.scheme;
     <div>
       <img
         alt="Moe's Avatar"
-        class="logo"
+        :class="`logo ${imgAni} magictime`"
         src="https://github.com/moedayraki.png"
         width="200"
         height="200"

@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 // import "primevue/resources/themes/tailwind-light/theme.css";
 import "primevue/resources/primevue.min.css";
 import "primeicons/primeicons.css";
+import "magic.css/dist/magic.min.css"
 import './index.css'
 
 import App from './App.vue'
