@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref,onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useAppStore } from "@/stores/app";
 import HelloWorld from "@/components/HelloWorld.vue";
@@ -7,16 +7,13 @@ import HelloWorld from "@/components/HelloWorld.vue";
 const app = useAppStore();
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
-var imgAni = ref()
+var imgAni = ref();
 onMounted(() => {
-  setTimeout(() =>{
-    imgAni.value = 'openDownLeft'
-  },2000)
-  setTimeout(() =>{
-    imgAni.value = 'openDownLeftReturn'
-  },4000)
-})
-
+  imgAni.value = "opacity-0";
+  setTimeout(() => {
+    imgAni.value = "foolishIn";
+  }, 800);
+});
 </script>
 
 <template>
@@ -43,7 +40,7 @@ onMounted(() => {
       </div>
     </div>
     <div class="wrapper">
-      <HelloWorld msg="Hello, Hello! 👋" />
+      <HelloWorld msg="Hello, Hello!" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
@@ -75,6 +72,7 @@ header {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+  z-index: 1;
 }
 
 a,

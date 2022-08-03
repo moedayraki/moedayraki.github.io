@@ -6,11 +6,14 @@ defineProps<{
 
 <template>
   <div class="greetings">
-    <h1 class="green">{{ msg }}</h1>
+    <h1 class="green">{{ msg }} <span>👋</span></h1>
     <h3>The Moe you are looking for is here!</h3>
     <h3>At least a virtual copy of him 😇</h3>
-    <br>
-    <h5>Wait!<RouterLink to="/terminal"> click here</RouterLink>  if you're a developer.</h5>
+    <br />
+    <h5>
+      Wait!<RouterLink to="/terminal"> click here</RouterLink> if you're a
+      developer.
+    </h5>
   </div>
 </template>
 
