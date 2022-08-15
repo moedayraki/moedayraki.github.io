@@ -14,7 +14,7 @@
     "deploy": "bash push_deployment.sh"
   },
   "dependencies": {
-    "axios": "^0.26.1",
+    "axios": "^0.27.2",
     "pinia": "^2.0.13",
     "primevue": "^3.15.0",
     "magic.css": "^1.4.7",
