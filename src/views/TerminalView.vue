@@ -11,6 +11,7 @@ import { useRouter, useRoute } from "vue-router";
 import Terminal from "@/components/Terminal.vue";
 import TerminalService from "primevue/terminalservice";
 import { useAppStore } from "@/stores/app";
+import axios from "axios";
 
 export default {
   name: "terminal-view",
@@ -32,21 +33,31 @@ export default {
       let response;
       let argsIndex = text.indexOf(" ");
       let command = argsIndex !== -1 ? text.substring(0, argsIndex) : text;
+      let param = text.substring(argsIndex + 1);
 
       switch (command.toLowerCase()) {
         case "--help":
           response = `commands:
             <br />
-            ~terminal is moe's portfolio as a CLI. New commands and features will be added to the portofolio every week.
+            ~terminal is moe's portfolio as a CLI.
             <br />
-            <div class="ml-4 w-1/5 inline-block">moe</div><div class="w-2/5 inline-block">get to know more about moe</div>
-            <br /> 
-            <div class="ml-4 w-1/5 inline-block">hello</div><div class="w-2/5 inline-block">just say hi</div>
-            <br /> 
-            <div class="ml-4 w-1/5 inline-block">.home</div><div class="w-2/5 inline-block">navigate to home</div>
-            <br /> 
-            <br /> 
-            <div class="ml-4 w-1/5 inline-block">--help</div><div class="w-2/5 inline-block">get all available commands</div>`;
+            <div class="ml-4 w-1/5 inline-block">moe</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">get to know more about moe</div>
+            <br />
+            <div class="ml-4 w-1/5 inline-block">hello</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">just say hi</div>
+            <br />
+            <div class="ml-4 w-1/5 inline-block">toggle-scheme</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">toggle between light/dark modes</div>
+            <br />
+            <div class="ml-4 w-1/5 inline-block">navigate</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">navigate through different pages</div>
+            <br />
+            <div class="ml-4 w-1/5 inline-block">blog</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">redirect to the moe blog</div>
+            <br />
+            <br />
+            <div class="ml-4 w-1/5 inline-block">tech-me</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">throws a random tech-savvy phrase.</div>
+            <br />
+            <br />
+            <div class="ml-4 w-1/5 inline-block">--help</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">get all available commands</div>
+            <br />
+            <div class="ml-4 w-1/5 inline-block">clear</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">clear the CLI</div>`;
           break;
 
         case "moe":
@@ -60,26 +71,93 @@ export default {
           break;
 
         case "hello":
-          response =
-            "Hola!<br /> I'm Moe. type 'moe' to know more about me 😊 or follow me on <a target='_blank' href='https://twitter.com/MohammedDayraki'>Twitter</a>";
+          switch (param.toLowerCase()) {
+            case "--languages":
+              axios({
+                url: "https://libretranslate.com/languages",
+                method: "get",
+                headers: {
+                  accept: 'application/json"',
+                },
+              }).then(function (jsonResponse) {
+                response = "available languages: ";
+                jsonResponse.data.forEach((element) => {
+                  response += `${element.name} `;
+                  TerminalService.emit("response", response);
+                });
+              });
+              break;
+
+            default:
+              response =
+                "I'm sorry! ☹️ but I'm working on this feature.<br /> please type 'hello --languages' to get list of available languages or follow me on <a target='_blank' href='https://twitter.com/MohammedDayraki'>Twitter</a>";
+          }
           break;
 
-        case ".home":
-          router.push("/");
+        case "tech-me":
+          axios({
+            url: "https://techy-api.vercel.app/api/text",
+            method: "get",
+          }).then(function (jsonResponse) {
+            response = jsonResponse.data;
+            TerminalService.emit("response", response);
+          });
+          break;
+
+        case "navigate":
+          switch (param.toLowerCase()) {
+            case "--help":
+              response = `available paths:
+              <br />
+              <div class="ml-4 w-1/5 inline-block">home</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">navigate to home</div>
+              <br />
+              <div class="ml-4 w-1/5 inline-block">projects</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">navigate to projects</div>
+              <br />
+              <div class="ml-4 w-1/5 inline-block">contact</div><div class="w-2/5 inline-block text-teal-700 dark:text-teal-200">navigate to contact</div>
+              <br />
+              `;
+              break;
+
+            case "home":
+              router.push("/");
+              break;
+
+            case "projects":
+              router.push("/projects");
+              break;
+
+            case "contact":
+              router.push("/contact");
+              break;
+
+            default:
+              response =
+                "unknown path. type 'navigate --help' to get all the options";
+              break;
+          }
           break;
 
         case "toggle-scheme":
           app.toggleMediaPreference();
           break;
 
+        case "blog":
+          window.location.href = "https://www.blog.dayrakiarts.com";
+          response = "redirecting...";
+          break;
+
         case "jana":
-          response = `Jana is something I can't live without.❤ 
+          response = `Jana is something I can't live without.❤
           <br/>
           If you find this code, you're either know your way in programming or you're close enough to me! 😇
           <br/>
           I love Jana, I will always love Jana!
-          `
-        break;
+          `;
+          break;
+
+        case "clear":
+          router.push("/terminal");
+          break;
 
         default:
           response = "unknown command: " + command;

@@ -61,6 +61,7 @@ export default {
       if (event.keyCode === 13 && this.commandText) {
         this.commands.push({ text: this.commandText });
         TerminalService.emit("command", this.commandText);
+        if (this.commandText.toLowerCase() == "clear") this.commands.length = 0;
         this.commandText = "";
       }
     },
