@@ -16,7 +16,7 @@
   "dependencies": {
     "axios": "^0.27.2",
     "pinia": "^2.0.22",
-    "primevue": "^3.16.2",
+    "primevue": "^3.17.0",
     "magic.css": "^1.4.8",
     "sass": "^1.54.9",
     "vue": "^3.2.39",
