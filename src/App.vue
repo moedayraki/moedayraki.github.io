@@ -22,7 +22,7 @@ onMounted(() => {
 
 const avatarStyle = computed(() => ({
   transform: `rotateX(${parallax.roll * 40}deg) rotateY(${
-    parallax.tilt * 40
+    parallax.tilt * 80
   }deg)`,
 }))
 </script>
