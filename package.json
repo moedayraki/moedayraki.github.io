@@ -20,8 +20,7 @@
     "primevue": "^3.17.0",
     "sass": "^1.55.0",
     "vue": "^3.2.39",
-    "vue-router": "^4.1.5",
-    "vue3-particles": "^2.3.3"
+    "vue-router": "^4.1.5"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
