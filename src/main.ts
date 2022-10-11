@@ -1,6 +1,5 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-import Particles from "vue3-particles";
 
 // import "primeflex/primeflex.css";
 // import "primevue/resources/themes/tailwind-light/theme.css";
@@ -16,6 +15,5 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-app.use(Particles)
 
 app.mount('#app')
