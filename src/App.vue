@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
+import { ref,reactive,computed ,onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useAppStore } from "@/stores/app";
 import HelloWorld from "@/components/HelloWorld.vue";
@@ -7,17 +7,24 @@ import { useParallax } from '@vueuse/core'
 
 const app = useAppStore();
 const avatar = ref(null)
-const parallax  = useParallax(avatar)
+const parallax  = reactive(useParallax(avatar))
 
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
 var imgAni = ref();
+
 onMounted(() => {
   imgAni.value = "opacity-0";
   setTimeout(() => {
     imgAni.value = "foolishIn";
   }, 800);
 });
+
+const avatarStyle = computed(() => ({
+  transform: `rotateX(${parallax.roll * 20}deg) rotateY(${
+    parallax.tilt * 20
+  }deg)`,
+}))
 </script>
 
 <template>
@@ -25,7 +32,7 @@ onMounted(() => {
     <div>
       <img
         ref= "avatar"
-        :style="transform: `rotateX(${parallax.roll * 20}deg) rotateY(${parallax.tilt * 20}deg)`"
+        :style="avatarStyle"
         alt="Moe's Avatar"
         :class="`logo ${imgAni} magictime`"
         src="https://github.com/moedayraki.png"
