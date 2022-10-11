@@ -7,7 +7,7 @@ import { useParallax } from '@vueuse/core'
 
 const app = useAppStore();
 const avatar = ref(null)
-const { tilt, roll, source } = useParallax(avatar)
+const parallax  = useParallax(avatar)
 
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
@@ -25,6 +25,7 @@ onMounted(() => {
     <div>
       <img
         ref= "avatar"
+        :style="transform: `rotateX(${parallax.roll * 20}deg) rotateY(${parallax.tilt * 20}deg)`"
         alt="Moe's Avatar"
         :class="`logo ${imgAni} magictime`"
         src="https://github.com/moedayraki.png"
