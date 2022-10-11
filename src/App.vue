@@ -3,8 +3,12 @@ import { ref, onMounted } from "vue";
 import { RouterLink, RouterView } from "vue-router";
 import { useAppStore } from "@/stores/app";
 import HelloWorld from "@/components/HelloWorld.vue";
+import { useParallax } from '@vueuse/core'
 
 const app = useAppStore();
+const avatar = ref(null)
+const { tilt, roll, source } = useParallax(avatar)
+
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
 var imgAni = ref();
@@ -20,6 +24,7 @@ onMounted(() => {
   <header v-if="$route.name != 'terminal'">
     <div>
       <img
+        ref= "avatar"
         alt="Moe's Avatar"
         :class="`logo ${imgAni} magictime`"
         src="https://github.com/moedayraki.png"
