@@ -6,8 +6,8 @@ import HelloWorld from "@/components/HelloWorld.vue";
 import { useParallax } from '@vueuse/core'
 
 const app = useAppStore();
-const avatar = ref(null)
-const parallax  = reactive(useParallax(avatar))
+const target = ref(null)
+const parallax  = reactive(useParallax(target))
 
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
@@ -28,10 +28,9 @@ const avatarStyle = computed(() => ({
 </script>
 
 <template>
-  <header v-if="$route.name != 'terminal'">
+  <header ref="target" v-if="$route.name != 'terminal'">
     <div>
-      <img        
-        ref="avatar"
+      <img                
         :style="avatarStyle"
         alt="Moe's Avatar"
         :class="`logo ${imgAni} magictime`"
