@@ -28,8 +28,8 @@ const avatarStyle = computed(() => ({
 </script>
 
 <template>
-  <header ref= "target" v-if="$route.name != 'terminal'">
-    <div>
+  <header v-if="$route.name != 'terminal'">
+    <div ref= "target">
       <img        
         :style="avatarStyle"
         alt="Moe's Avatar"
