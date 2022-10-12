@@ -7,7 +7,7 @@ import { useParallax } from '@vueuse/core'
 
 const app = useAppStore();
 const avatar = ref(null)
-const parallax  = reactive(useParallax(avatar))
+const parallax  = reactive(useParallax(target))
 
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
@@ -22,16 +22,15 @@ onMounted(() => {
 
 const avatarStyle = computed(() => ({
   transform: `rotateX(${parallax.roll * 40}deg) rotateY(${
-    parallax.tilt * 80
+    parallax.tilt * 40
   }deg)`,
 }))
 </script>
 
 <template>
-  <header v-if="$route.name != 'terminal'">
+  <header ref= "target" v-if="$route.name != 'terminal'">
     <div>
-      <img
-        ref= "avatar"
+      <img        
         :style="avatarStyle"
         alt="Moe's Avatar"
         :class="`logo ${imgAni} magictime`"
