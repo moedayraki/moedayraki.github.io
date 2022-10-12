@@ -7,7 +7,7 @@ import { useParallax } from '@vueuse/core'
 
 const app = useAppStore();
 const avatar = ref(null)
-const parallax  = reactive(useParallax(target))
+const parallax  = reactive(useParallax(avatar))
 
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
@@ -29,8 +29,9 @@ const avatarStyle = computed(() => ({
 
 <template>
   <header v-if="$route.name != 'terminal'">
-    <div ref="target">
+    <div>
       <img        
+        ref="avatar"
         :style="avatarStyle"
         alt="Moe's Avatar"
         :class="`logo ${imgAni} magictime`"
