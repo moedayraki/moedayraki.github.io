@@ -20,7 +20,7 @@
     "pinia": "^2.0.22",
     "primevue": "^3.18.1",
     "sass": "^1.55.0",
-    "vue": "^3.2.41",
+    "vue": "^3.2.45",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
