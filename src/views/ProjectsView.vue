@@ -1,6 +1,6 @@
 <template>
   <div class="projects">
-    <h1 v-for="project in projects" v-bind:key="project.id">{{ project.name }}</h1>
+    <h1>I'm still working on this page 😔.</h1>
   </div>
 </template>
 
