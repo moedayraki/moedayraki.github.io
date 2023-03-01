@@ -129,7 +129,7 @@ import IconCypress from "./icons/IconCypress.vue";
     </template>
     <template #heading>The Moe Blog</template>
     Check out the latest
-    <a href="https://www.blog.dayrakiarts.com">articles</a> in programming and
+    <a href="https://moedayraki.github.io/blog">articles</a> in programming and
     development.
   </WelcomeItem>
 
