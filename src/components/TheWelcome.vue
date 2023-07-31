@@ -24,12 +24,11 @@ import IconCypress from "./icons/IconCypress.vue";
     </template>
     <template #heading>Get to Know Moe</template>
 
-    My first name is actually Mohammed but I go by Moe, Mauris, and in video
-    games I'm known as El3ctr0n. I create
+    My first name is actually Mohammed but I usually go by Moe (Not Mo 😇). I create
     <a target="_blank" href="https://dayrakiarts.com/">stuff for the web</a>
     including websites, web applications, and contribute to
     <a target="_blank" href="https://github.com/moedayraki/">open source</a> as
-    much as I can.
+    much as I can. I'm a PC gamer as well!
   </WelcomeItem>
 
   <WelcomeItem>
@@ -46,8 +45,8 @@ import IconCypress from "./icons/IconCypress.vue";
     <br />
 
     There, <a target="_blank" href="https://laravel.com/">laravel</a> was my
-    door to web development. You can read more about my road to web development
-    <a target="_blank" href="https://dayrakiarts.com/">here</a>. When it comes
+    door to web development. You can read more about why I think web development is great
+    <a target="_blank" href="https://moedayraki.github.io/blog/web-development">here</a>. When it comes
     to web development, my go to stack is:
     <ul>
       <li>
