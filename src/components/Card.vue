@@ -19,7 +19,7 @@
 export default {
     mounted() {
     this.width = this.$refs.card.offsetWidth;
-    this.height = this.$refs.card.offsetHeight;
+    this.height = this.$refs.card.offsetHeight;  
   },
   props: ['dataImage'],
   data: () => ({
@@ -102,7 +102,6 @@ export default {
     }
     .card-wrap:hover .card {
     transition: 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 2s cubic-bezier(0.23, 1, 0.32, 1);
-    box-shadow: rgba(255, 255, 255, 0.2) 0 0 40px 5px, white 0 0 0 1px, rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset white 0 0 0 6px;
     }
 
     .card {
@@ -113,15 +112,14 @@ export default {
     background-color: #333;
     overflow: hidden;
     border-radius: 10px;
-    box-shadow: rgba(0, 0, 0, 0.66) 0 30px 60px 0, inset #333 0 0 0 5px, inset rgba(255, 255, 255, 0.5) 0 0 0 6px;
     transition: 1s cubic-bezier(0.445, 0.05, 0.55, 0.95);
     }
 
     .card-bg {
     opacity: 0.5;
     position: absolute;
-    top: -20px;
-    left: -20px;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     padding: 20px;
@@ -135,7 +133,7 @@ export default {
     .card-info {
     padding: 20px;
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     color: #fff;
     transform: translateY(40%);
     transition: 0.6s 1.6s cubic-bezier(0.215, 0.61, 0.355, 1);
