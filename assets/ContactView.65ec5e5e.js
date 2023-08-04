@@ -1,1 +1,0 @@
-import{_ as e,o as t,c as o,b as _}from"./index.71860c42.js";const s={},a={class:"about"},c=_("h1",null,"I'm still working on this page \u{1F614}.",-1),n=[c];function r(i,l){return t(),o("div",a,n)}var u=e(s,[["render",r]]);export{u as default};
