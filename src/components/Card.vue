@@ -21,7 +21,7 @@ export default {
     this.width = this.$refs.card.offsetWidth;
     this.height = this.$refs.card.offsetHeight;  
   },
-  props: ['dataImage'],
+  props: ['dataImage','viewOffset'],
   data: () => ({
     width: 0,
     height: 0,
@@ -58,7 +58,7 @@ export default {
   },
   methods: {
     handleMouseMove(e) {
-      this.mouseX = e.pageX - this.$refs.card.offsetLeft - this.width/2;
+      this.mouseX = e.pageX - this.viewOffset - this.$refs.card.offsetLeft - this.width/2;
       this.mouseY = e.pageY - this.$refs.card.offsetTop - this.height/2;
     },
     handleMouseEnter() {
