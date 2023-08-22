@@ -21,7 +21,7 @@
     "primevue": "^3.25.0",
     "sass": "^1.65.1",
     "vue": "^3.3.4",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.2.4"
   },
   "devDependencies": {
     "@babel/types" : "^7.22.5",
