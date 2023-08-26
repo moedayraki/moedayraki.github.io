@@ -1,10 +1,10 @@
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config';
+import Tailwind from "primevue/passthrough/tailwind";
 
-// import "primevue/resources/themes/tailwind-light/theme.css";
 import "primevue/resources/primevue.min.css";
-// import "primeicons/primeicons.css";
+import "primeicons/primeicons.css";
 import "magic.css/dist/magic.min.css"
 import './index.css'
 
@@ -15,6 +15,6 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
-app.use(PrimeVue, { unstyled: true })
+app.use(PrimeVue, { unstyled: true , pt: Tailwind})
 
 app.mount('#app')

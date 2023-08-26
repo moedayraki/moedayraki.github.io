@@ -3,13 +3,12 @@ import { ref,reactive,computed ,onMounted } from "vue";
 import { useAppStore } from "@/stores/app";
 import HelloWorld from "@/components/HelloWorld.vue";
 import { useParallax } from '@vueuse/core'
-import Dialog from 'primevue/dialog';
-import Button from 'primevue/button';
+import Sidebar from 'primevue/sidebar';
 
 const app = useAppStore();
 const target = ref(null)
 const parallax  = reactive(useParallax(target))
-const visible = ref(false)
+const visibleTop = ref(false);
 
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
@@ -59,19 +58,23 @@ const avatarStyle = computed(() => ({
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
-        <a class="cursor-pointer" @click="visible = true">Contact</a>
-        <Dialog v-model:visible="visible" modal header="Header" :style="{ width: '50vw' }"
+        <a class="cursor-pointer" @click="visibleTop = true">Contact</a>
+        <Sidebar v-model:visible="visibleTop" position="top" class="bg-white/20"
+        :pt='{ root: { class: " lg:w-1/4 h-auto pt-5" },
+               header: { class: "hidden" },
+               closeButton: { class: "hidden"} }'>
+          <div class="flex justify-around">
+              <a href="https://github.com/moedayraki" target="_blank"><img src="./assets/github_logo.png" alt="github logo" class="h-10"></a>
+              <a href="https://twitter.com/MohammedDayraki" target="_blank"><img src="./assets/x_logo.png" alt="github logo" class="h-10"></a>
+              <a href="https://g.page/r/CXfw9jFf2d22EAI" target="_blank"><img src="./assets/google_logo.png" alt="github logo" class="h-10"></a>
+          </div>  
+        </Sidebar>
+        <!-- <Dialog v-model:visible="visible" modal
         :pt="{
-          root: { class: 'bg-white text-black' }
+          root: { class: 'bg-white w-1/2 border-4 border-black' },
         }">
-          <p>
-              Coming Soon
-          </p>
-          <template #footer>
-              <Button label="No" icon="pi pi-times" @click="visible = false" text />
-              <Button label="Yes" icon="pi pi-check" @click="visible = false" autofocus />
-          </template>
-        </Dialog>
+                  
+        </Dialog> -->
       </nav>
     </div>
   </header>
