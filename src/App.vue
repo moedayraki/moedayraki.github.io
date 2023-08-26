@@ -1,13 +1,15 @@
 <script setup lang="ts">
 import { ref,reactive,computed ,onMounted } from "vue";
-import { RouterLink, RouterView } from "vue-router";
 import { useAppStore } from "@/stores/app";
 import HelloWorld from "@/components/HelloWorld.vue";
 import { useParallax } from '@vueuse/core'
+import Dialog from 'primevue/dialog';
+import Button from 'primevue/button';
 
 const app = useAppStore();
 const target = ref(null)
 const parallax  = reactive(useParallax(target))
+const visible = ref(false)
 
 app.scheme = app.getMediaPreference();
 document.documentElement.className = app.scheme;
@@ -57,12 +59,24 @@ const avatarStyle = computed(() => ({
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
-        <RouterLink to="/contact">Contact</RouterLink>
+        <a class="cursor-pointer" @click="visible = true">Contact</a>
+        <Dialog v-model:visible="visible" modal header="Header" :style="{ width: '50vw' }"
+        :pt="{
+          root: { class: 'bg-white text-black' }
+        }">
+          <p>
+              Coming Soon
+          </p>
+          <template #footer>
+              <Button label="No" icon="pi pi-times" @click="visible = false" text />
+              <Button label="Yes" icon="pi pi-check" @click="visible = false" autofocus />
+          </template>
+        </Dialog>
       </nav>
     </div>
   </header>
 
-  <RouterView />
+  <RouterView />  
 </template>
 
 <style>
