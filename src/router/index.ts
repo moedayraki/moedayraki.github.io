@@ -11,27 +11,23 @@ const router = createRouter({
     },
     {
       path: '/terminal',
-      name: 'terminal',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
+      name: 'terminal',      
       component: () => import('../views/TerminalView.vue')
     },
     {
-      path: '/contact',
-      name: 'contact',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ContactView.vue')
+      path: '/projects',
+      name: 'projects',     
+      component: () => import('../views/ProjectsView.vue')
     },
     {
-      path: '/projects',
-      name: 'projects',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/ProjectsView.vue')
+      path: '/projects/:id',
+      name: 'project',
+      component: () => import('../views/ProjectView.vue')
+    },
+    {
+      path: '/quiz',
+      name: 'quiz',      
+      component: () => import('../views/QuizView.vue')
     }
   ]
 })

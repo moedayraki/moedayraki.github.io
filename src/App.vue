@@ -29,7 +29,7 @@ const avatarStyle = computed(() => ({
 </script>
 
 <template>
-  <header ref="target" v-if="$route.name != 'terminal'">
+  <header ref="target" v-if="$route.name == 'home' || $route.name == 'projects'">
     <div>
       <img                
         :style="avatarStyle"
@@ -68,13 +68,7 @@ const avatarStyle = computed(() => ({
               <a href="https://twitter.com/MohammedDayraki" target="_blank"><img src="./assets/x_logo.png" alt="github logo" class="h-10"></a>
               <a href="https://g.page/r/CXfw9jFf2d22EAI" target="_blank"><img src="./assets/google_logo.png" alt="github logo" class="h-10"></a>
           </div>  
-        </Sidebar>
-        <!-- <Dialog v-model:visible="visible" modal
-        :pt="{
-          root: { class: 'bg-white w-1/2 border-4 border-black' },
-        }">
-                  
-        </Dialog> -->
+        </Sidebar>        
       </nav>
     </div>
   </header>
