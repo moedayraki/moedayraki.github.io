@@ -8,9 +8,25 @@ export const useAppStore = defineStore({
       {
         id:1,
         name:'Solely Foot Care Inc',
-        type:'Website & Admin Page',
-        techonology:'Laravel - Bootstrap',
         description:'A foot care clinic website that shows infomation, available services, google reviews, and instagram feeds. A contact form is found on the website that sends an email to the admin. The website is backed up by an admin page to maintain available services and prices.',
+        techonology: [
+          {
+            key: '0',
+            label: 'laravel 8.65',
+          },
+          {
+            key: '1',
+            label: 'bootstrap 4.3.1',
+          },
+          // {
+          //   key: '2',
+          //   label: 'composer',
+          //   children: [
+          //     { key: '2-0', label: 'Expenses.doc' },
+          //     { key: '2-1', label: 'Resume.doc' }
+          //   ]
+          // }
+      ],
         link:'https://solelyfootcareinc.ca',
         logo:'https://images.pexels.com/photos/3564304/pexels-photo-3564304.jpeg?auto=compress&cs=tinysrgb&w=1600',
         screenshots:[

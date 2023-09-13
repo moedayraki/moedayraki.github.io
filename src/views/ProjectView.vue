@@ -17,15 +17,36 @@
         </Galleria>
    </div>
    <div class="ml-4">
-       <h1>{{ project.name }}</h1>
-       <h3>{{ project.type }}</h3>
+       <h1>{{ project.name }} <a :href="project.link" target="_blank"><i class="pi pi-link" style="font-size: 2rem"></i></a></h1>
+        <Fieldset legend="Description"
+        :pt="{
+            root: {
+            class: [
+                'border border-gray-300 bg-white text-gray-700 rounded-md block mx-2 my-0.5 pl-4 pr-5 inline-size-min',
+                'dark:bg-green-900 dark:border-green-200/40 dark:text-white/80'
+            ]
+        },
+        legend:{
+            class: [
+                'border border-gray-300 text-gray-700 bg-gray-50 font-bold rounded-md',
+                'dark:bg-green-600 dark:border-green-900/40 dark:text-white/80 ',
+            ]
+        },
+        }">
+            <p>
+                {{ project.description }}
+            </p>
+        </Fieldset>
+       <a href="https://moedayraki.github.io/blog/" target="_blank" class="m-2">More Details ..</a>
    </div>
 </template>
 
 <script setup lang="ts">
 import _ from 'lodash'
 import { useAppStore } from '@/stores/app'
-import Galleria from 'primevue/galleria';
+import Galleria from 'primevue/galleria'
+import Fieldset from 'primevue/fieldset'
+import Tree from 'primevue/tree';
 
 const store = useAppStore()
 const project = _.find(store.projects, { id: 1 })        
