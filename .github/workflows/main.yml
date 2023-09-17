@@ -27,7 +27,7 @@ jobs:
         run: npm install
 
       - name: Build
-        run: npm run build # The build command of your project
+        run: vue-tsc --noEmit && vite build --base=./ # The build command of your project
         
       - name: Push
         uses: s0/git-publish-subdir-action@develop
