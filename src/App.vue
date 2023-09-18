@@ -67,7 +67,7 @@ watch(visibleTop, (newVisibleTop) => {
         <RouterLink to="/projects">Projects</RouterLink>
         <a class="cursor-pointer" @click="visibleTop = !visibleTop">Contact</a>
         <Transition>
-          <div v-show="visibleTop" @click="visibleTop = false" class="bg-black/80 backdrop-blur-[5px] flex pointer-events-auto z-20" data-pc-section="mask" style="position: fixed; height: 100%; width: 100%; left: 0px; top: 0px; display: flex; justify-content: center; align-items: flex-start; z-index: 1101;">
+          <div v-show="visibleTop" @click="visibleTop = false" class="bg-black/80 backdrop-blur-[5px] flex pointer-events-auto z-20" data-pc-section="mask" style="position: fixed; height: 100vh; width: 100vw; left: -80px; top: 0px; display: flex; justify-content: center; align-items: flex-start; z-index: 1101;">
             <div role="complementary" aria-modal="true" class="overflow-hidden grow shadow-none bg-white/0 p-0 flex flex-col pointer-events-auto relative text-gray-700 border-0 h-screen w-full" data-pc-name="sidebar" data-pc-section="root" data-pd-focustrap="true">
               <div class="center-box mx-auto max-w-[350px] h-full w-full">
                 <div class="max-h-[150px] max-w-[350px] h-full w-full absolute overflow-hidden z-0 rounded-[10px] animated-border-box-glow blur-[20px]"></div>
