@@ -47,9 +47,11 @@
 <script setup lang="ts">
 import _ from 'lodash'
 import { useAppStore } from '@/stores/app'
+import { useRoute } from 'vue-router'
 import Galleria from 'primevue/galleria'
 import Fieldset from 'primevue/fieldset'
 
 const store = useAppStore()
-const project = _.find(store.projects, { id: 1 })        
+const route = useRoute()
+const project = _.find(store.projects, { id: Number(route.params.id) })  
 </script>
