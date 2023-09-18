@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { ref,reactive,computed ,onMounted } from "vue";
+import { ref,reactive,computed ,onMounted, watch } from "vue";
 import { useAppStore } from "@/stores/app";
 import HelloWorld from "@/components/HelloWorld.vue";
 import { useParallax } from '@vueuse/core'
-import Sidebar from 'primevue/sidebar';
 
 const app = useAppStore();
 const target = ref(null)
@@ -26,6 +25,15 @@ const avatarStyle = computed(() => ({
     parallax.tilt * 40
   }deg)`,
 }))
+
+watch(visibleTop, (newVisibleTop) => {
+  if (newVisibleTop) {
+    document.querySelector('body').style.overflow = 'hidden';
+  }
+  else{
+    document.querySelector('body').style.overflow = 'auto';
+  }
+})
 </script>
 
 <template>
@@ -57,28 +65,23 @@ const avatarStyle = computed(() => ({
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/projects">Projects</RouterLink>
-        <a class="cursor-pointer" @click="visibleTop = true">Contact</a>
-        <Sidebar v-model:visible="visibleTop" position="top"
-        :pt='{  mask: { class: "!bg-black/90" },
-                root: { class: "shadow-none bg-white/0 mt-5 p-0" },
-                content: {class: "!p-0 my-0 mx-auto max-w-[350px]"},
-                header: { class: "hidden" },
-                closeButton: { class: "hidden"} 
-              }'>
-          <div class="center-box mx-auto">
-            <!-- START Box -->
-            <div class="animated-border-box-glow"></div>
-            <div class="animated-border-box">
-              <div class="flex justify-around h-full align-middle items-center">
-                  <a class="morph" href="https://github.com/moedayraki" target="_blank"><img src="./assets/github_logo.png" alt="github logo" class="h-8 align-middle"></a>
-                  <a class="morph" href="https://twitter.com/MohammedDayraki" target="_blank"><img src="./assets/x_logo.png" alt="github logo" class="h-8 align-middle"></a>
-                  <a class="morph" href="https://g.page/r/CXfw9jFf2d22EAI" target="_blank"><img src="./assets/google_logo.png" alt="github logo" class="h-8 align-middle"></a>
-              </div> 
+        <a class="cursor-pointer" @click="visibleTop = !visibleTop">Contact</a>
+        <Transition>
+          <div v-show="visibleTop" @click="visibleTop = false" class="bg-black/80 backdrop-blur-[5px] flex pointer-events-auto z-20" data-pc-section="mask" style="position: fixed; height: 100%; width: 100%; left: 0px; top: 0px; display: flex; justify-content: center; align-items: flex-start; z-index: 1101;">
+            <div role="complementary" aria-modal="true" class="overflow-hidden grow shadow-none bg-white/0 p-0 flex flex-col pointer-events-auto relative text-gray-700 border-0 h-screen w-full" data-pc-name="sidebar" data-pc-section="root" data-pd-focustrap="true">
+              <div class="center-box mx-auto max-w-[350px] h-full w-full">
+                <div class="max-h-[150px] max-w-[350px] h-full w-full absolute overflow-hidden z-0 rounded-[10px] animated-border-box-glow blur-[20px]"></div>
+                <div class="max-h-[150px] max-w-[350px] h-full w-full absolute overflow-hidden z-0 rounded-[10px] animated-border-box">
+                  <div class="flex justify-around h-full align-middle items-center" v-on:click.stop>
+                      <a class="morph" href="https://github.com/moedayraki" target="_blank"><img src="./assets/github_logo.png" alt="github logo" class="h-8 align-middle"></a>
+                      <a class="morph" href="https://twitter.com/MohammedDayraki" target="_blank"><img src="./assets/x_logo.png" alt="github logo" class="h-8 align-middle"></a>
+                      <a class="morph" href="https://g.page/r/CXfw9jFf2d22EAI" target="_blank"><img src="./assets/google_logo.png" alt="github logo" class="h-8 align-middle"></a>
+                  </div> 
+                </div>
+              </div>
             </div>
-            <!-- END -->
           </div>
-           
-        </Sidebar>      
+        </Transition>      
       </nav>
     </div>
   </header>
@@ -89,24 +92,6 @@ const avatarStyle = computed(() => ({
 <style>
 @import "@/assets/css/base.css";
 @import "@/assets/css/main.css";
-
-.animated-border-box, .animated-border-box-glow{
-  max-height: 300px;
-  max-width: 350px;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  overflow: hidden; 
-  z-index: 0;
-  /* Border Radius */
-	border-radius: 10px;
-}
-
-.animated-border-box-glow{
-  overflow: hidden;
-  /* Glow Blur */
-  filter: blur(20px);
-}
 
 .animated-border-box:before, .animated-border-box-glow:before {
   content: '';
@@ -130,15 +115,11 @@ const avatarStyle = computed(() => ({
 	content: '';
 	position: absolute;
 	z-index: -1;
-  /* border width */
 	left: 5px;
 	top: 5px;
-  /* double the px from the border width left */
 	width: calc(100% - 10px);
 	height: calc(100% - 10px);
-  /*bg color*/
 	background: #b2b2b2;
-  /*box border radius*/
 	border-radius: 7px;
 }
 
@@ -185,6 +166,16 @@ const avatarStyle = computed(() => ({
               inset -2px -2px 4px rgba(255, 255, 255, .5),
               inset 2px 2px 2px rgba(255, 255, 255, .075),
               inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }
 
 </style>
