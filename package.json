@@ -18,7 +18,7 @@
     "axios": "^1.5.1",
     "lodash": "^4.17.21",
     "magic.css": "^1.4.8",
-    "pinia": "^2.1.6",
+    "pinia": "^2.1.7",
     "primeicons": "^6.0.1",
     "primevue": "^3.39.0",
     "sass": "^1.69.5",
