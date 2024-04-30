@@ -20,7 +20,7 @@
     "magic.css": "^1.4.8",
     "pinia": "^2.1.7",
     "primeicons": "^6.0.1",
-    "primevue": "^3.39.0",
+    "primevue": "^3.52.0",
     "sass": "^1.69.5",
     "vue": "^3.3.8",
     "vue-router": "^4.2.5"
@@ -31,10 +31,11 @@
     "@types/jsdom": "^21.1.4",
     "@types/node": "^20.11.25",
     "@vitejs/plugin-vue": "^2.3.4",
-    "@vue/eslint-config-prettier": "^8.0.0",
+    "@vue/eslint-config-prettier": "^9.0.0",
     "@vue/eslint-config-typescript": "^10.0.0",
     "@vue/test-utils": "^2.4.5",
-    "@vue/tsconfig": "^0.4.0",
+    "@vue/tsconfig": "^0.5.1",
+    "@vue/test-utils": "^2.4.2",
     "autoprefixer": "^10.4.14",
     "cypress": "^13.6.1",
     "eslint": "^8.57.0",
@@ -46,7 +47,7 @@
     "start-server-and-test": "^2.0.3",
     "tailwindcss": "^3.4.1",
     "typescript": "~5.3.3",
-    "vite": "^2.9.17",
+    "vite": "^2.9.18",
     "vitest": "^0.34.6",
     "vue-tsc": "^2.0.6"
   }
